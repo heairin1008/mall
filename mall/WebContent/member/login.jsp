@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
@@ -17,14 +17,14 @@
 	}
 %>
 <div class="container">
-	<div class="row"> <!-- 헤더 goodee shop / 검색바 -->
+	<div class="row" style="margin : 10px;"> <!-- 헤더 goodee shop / 검색바 -->
 		<div class="col-sm-4 font-weight-bold"><h2><a class="text-dark"  style="text-decoration : none;" href="<%=request.getContextPath()%>/index.jsp">Goodee Shop</a></h2></div>
 		<div class="col">
-			<form>
+			<form method="post" action="<%=request.getContextPath()%>/product/searchProduct.jsp">
 				<table>
 					<tr>
 						<td width="400px">
-							<input class="form-control" type="text">
+							<input class="form-control" type="text" name="productName">
 						</td>
 						<td width="100px">
 							<button class="btn btn-info" type="submit">검색</button>	
@@ -44,9 +44,7 @@
 			<a class="text-dark" href="<%=request.getContextPath()%>/orders/myOrdersList.jsp"><i class='fas fa-user' style='font-size: 36px'></i></a>
 		<%
 			}
-		%>
-			
-			<i class='fas fa-shopping-cart' style='font-size: 36px'></i>	
+		%>	
 		</div>
 	</div>
 	<div> <!-- 로그인/회원가입 메뉴바 -->
@@ -68,7 +66,7 @@
 				<ul class="navbar-nav mr-right">
 					<li class="nav-iten"><a class="nav-link btn btn-danger btn-sm" href="<%=request.getContextPath()%>/member/logoutAction.jsp">로그아웃</a></li>
 					&nbsp;
-					<li class="nav-iten"><a class="nav-link btn btn-light btn-sm" href="">회원정보</a></li>
+					<li class="nav-iten"><a class="nav-link btn btn-light btn-sm" href="<%=request.getContextPath()%>/member/memberOne.jsp">회원정보</a></li>
 				</ul>
 		<%
 			}
@@ -76,18 +74,19 @@
 		%>
 	</div>
 	
+	<!-- 로그인 테이블 -->
 	<div class="jumbotron">	
 		<h1>로그인</h1>
 	</div>
 	<form method="post" action="<%=request.getContextPath()%>/member/loginAction.jsp">
-		<table class="table-bordered form-group" style="margin:auto; text-align:center;">
+		<table class="table table-bordered form-group">
 			<tr>
 				<td>member_email</td>
-				<td width="300px"><input class="form-control" type="text" name="memberEmail"></td>
+				<td><input class="form-control" type="text" name="memberEmail"></td>
 			</tr>
 			<tr>
 				<td>member_pw</td>
-				<td width="300px"><input class="form-control" type="password" name="memberPw"></td>
+				<td><input class="form-control" type="password" name="memberPw"></td>
 			</tr>
 		</table>
 		<div style="text-align:center;">

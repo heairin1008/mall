@@ -21,14 +21,14 @@
 %>
 <body>
 <div class="container">
-	<div class="row"> <!-- 헤더 goodee shop / 검색바 -->
+	<div class="row" style="margin : 10px;"> <!-- 헤더 goodee shop / 검색바 -->
 		<div class="col-sm-4 font-weight-bold"><h2><a class="text-dark"  style="text-decoration : none;" href="<%=request.getContextPath()%>/index.jsp">Goodee Shop</a></h2></div>
 		<div class="col">
-			<form>
+			<form method="post" action="<%=request.getContextPath()%>/product/searchProduct.jsp">
 				<table>
 					<tr>
 						<td width="400px">
-							<input class="form-control" type="text">
+							<input class="form-control" type="text" name="productName">
 						</td>
 						<td width="100px">
 							<button class="btn btn-info" type="submit">검색</button>	
@@ -38,11 +38,19 @@
 			</form>
 		</div>
 		<div class="col-sm-3">
-			<a class="text-dark" href=""><i class='fas fa-user' style='font-size: 36px'></i></a>
-			<i class='fas fa-shopping-cart' style='font-size: 36px'></i>	
+		<%
+			if(session.getAttribute("loginMemberEmail") == null){
+		%>
+				<a class="text-dark" href="<%=request.getContextPath()%>/member/login.jsp"><i class='fas fa-user' style='font-size: 36px'></i></a>
+		<%
+			}else{
+		%>
+			<a class="text-dark" href="<%=request.getContextPath()%>/orders/myOrdersList.jsp"><i class='fas fa-user' style='font-size: 36px'></i></a>
+		<%
+			}
+		%>
 		</div>
 	</div>
-	
 	<div> <!-- 로그인/회원가입 메뉴바 -->
 		<nav class="navbar navbar-expand-sm bg-dark">
 			<ul class="navbar-nav mr-auto"></ul>
@@ -51,9 +59,9 @@
 		%>
 				<!-- 로그아웃 상태 -->
 				<ul class="navbar-nav mr-right">
-					<li class="nav-iten""><a class="nav-link btn btn-primary brn-sm" href="<%=request.getContextPath()%>/member/login.jsp">로그인</a></li>
+					<li class="nav-iten"><a class="nav-link btn btn-primary brn-sm" href="<%=request.getContextPath()%>/member/login.jsp">로그인</a></li>
 					&nbsp;
-					<li class="nav-iten""><a class="nav-link btn btn-light btn-sm" href="<%=request.getContextPath()%>/member/signup.jsp">회원가입</a></li>
+					<li class="nav-iten"><a class="nav-link btn btn-light btn-sm" href="<%=request.getContextPath()%>/member/signup.jsp">회원가입</a></li>
 				</ul>
 		<%
 			}else{
@@ -62,13 +70,12 @@
 				<ul class="navbar-nav mr-right">
 					<li class="nav-iten"><a class="nav-link btn btn-danger btn-sm" href="<%=request.getContextPath()%>/member/logoutAction.jsp">로그아웃</a></li>
 					&nbsp;
-					<li class="nav-iten"><a class="nav-link btn btn-light btn-sm" href="">회원정보</a></li>
+					<li class="nav-iten"><a class="nav-link btn btn-light btn-sm" href="<%=request.getContextPath()%>/member/memberOne.jsp">회원정보</a></li>
 				</ul>
 		<%
 			}
 		
 		%>
-		</nav>
 	</div>
 	
 	<!-- 공지사항 상세정보 -->

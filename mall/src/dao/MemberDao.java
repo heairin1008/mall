@@ -65,4 +65,26 @@ public class MemberDao {
 		conn.close();
 		return member;
 	}
+	
+	public Member selectMemberOne(String memberEmail) throws Exception{
+		Member member = null;
+		
+		DBUtil dbUtil = new DBUtil();
+		Connection conn = dbUtil.getConnection();
+		
+		String sql = "select member_email, member_name, member_date from member where member_email = ?";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, memberEmail);
+		ResultSet rs = stmt.executeQuery();
+		
+		if(rs.next()) {
+			member = new Member();
+			member.setMemberEmail(rs.getString("member_email"));
+			member.setMemberName(rs.getString("member_name"));
+			member.setMemberDate(rs.getString("member_date"));
+		}
+		
+		conn.close();
+		return member;
+	}
 }

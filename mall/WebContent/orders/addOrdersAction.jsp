@@ -3,6 +3,7 @@
 <%@ page import="vo.*" %>
 <%@ page import="dao.*" %>
 <%
+	// 로그인 상태가 아니라면 로그인 페이지로 이동
 	if(session.getAttribute("loginMemberEmail") == null){
 		response.sendRedirect(request.getContextPath()+"/member/login.jsp");
 		return;
@@ -15,6 +16,7 @@
 	String memberEmail = (String)(session.getAttribute("loginMemberEmail"));
 	String ordersAddr = request.getParameter("ordersAddr");
 	
+	//주문 내역 데이터 입력
 	Orders orders = new Orders();
 	orders.setProductId(productId);
 	orders.setOrdersAmount(ordersAmount);

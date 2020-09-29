@@ -18,7 +18,7 @@
 	ArrayList<Orders> list = ordersDao.selectOrdersListByEmail(session.getAttribute("loginMemberEmail").toString());
 %>
 <div class="container">
-<div class="row"> <!-- 헤더 goodee shop / 검색바 -->
+<div class="row"  style="margin : 10px;"> <!-- 헤더 goodee shop / 검색바 -->
 		<div class="col-sm-4 font-weight-bold"><h2><a class="text-dark"  style="text-decoration : none;" href="<%=request.getContextPath()%>/index.jsp">Goodee Shop</a></h2></div>
 		<div class="col">
 			<form>
@@ -77,18 +77,18 @@
 		
 		%>
 	</div>
-	
+	<!-- 회원이 주문한 내역 테이블 -->
 	<div class="jumbotron">
 		<h1>주문 내역</h1>
 	</div>
 	<table class="table table-bordered">
 		<thead>
 			<tr>
-				<th>product_id</th>
-				<th>orders_amount</th>
-				<th>orders_price</th>
-				<th>orders_date</th>
-				<th>orders_state</th>
+				<th>상품 번호</th>
+				<th>주문 수량</th>
+				<th>총 금액</th>
+				<th>주문 날짜</th>
+				<th>결제 / 배송 현황</th>
 			</tr>
 		</thead>
 		<tbody>
