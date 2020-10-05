@@ -94,7 +94,7 @@
 					%>
 			</div>
 			<div class="col-sm-9">
-				<img src="<%=request.getContextPath()%>/images/gu.jpg">
+				<img src="<%=request.getContextPath()%>/image/gu.jpg">
 			</div>
 		</div>
 	</div>
