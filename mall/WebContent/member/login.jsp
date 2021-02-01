@@ -114,11 +114,11 @@
 		<table class="table table-bordered form-group">
 			<tr>
 				<td>member_email</td>
-				<td><input class="form-control" type="text" name="memberEmail" id="memberEmail"></td>
+				<td><input class="form-control" type="text" name="memberEmail" id="memberEmail" value="goodee@naver.com"></td>
 			</tr>
 			<tr>
 				<td>member_pw</td>
-				<td><input class="form-control" type="password" name="memberPw" id="memberPw"></td>
+				<td><input class="form-control" type="password" name="memberPw" id="memberPw" value="1234"></td>
 			</tr>
 		</table>
 		<div style="text-align:center;">
