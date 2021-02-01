@@ -5,7 +5,7 @@ import commons.DBUtil;
 import java.sql.*;
 
 public class NoticeDao {
-	//¸ÞÀÎÆäÀÌÁö °øÁö ¸®½ºÆ® Ãâ·Â
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
 	public ArrayList<Notice> selecrMainNoticeList() throws Exception{
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		DBUtil dbUtil = new DBUtil();
@@ -15,7 +15,7 @@ public class NoticeDao {
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 		
-		// ¹Ýº¹¹®À» ÅëÇØ µ¥ÀÌÅÍ ¼ø¼­´ë·Î ÀÔ·Â
+		// ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 		while(rs.next()) {
 			Notice notice = new Notice();
 			notice.setNoticeId(rs.getInt("notice_id"));
@@ -27,7 +27,7 @@ public class NoticeDao {
 		return list;
 	}
 	
-	//°øÁö »ó¼¼º¸±â
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ó¼¼ºï¿½ï¿½ï¿½
 	public Notice selectNoticeOne(int noticeId) throws Exception{
 		Notice notice = null;
 		DBUtil dbUtil = new DBUtil();
@@ -38,7 +38,7 @@ public class NoticeDao {
 		stmt.setInt(1, noticeId);
 		ResultSet rs = stmt.executeQuery();
 		
-		// ¹Ýº¹¹®À» ÅëÇØ µ¥ÀÌÅÍ ¼ø¼­´ë·Î ÀÔ·Â
+		// ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 		while(rs.next()) {
 			notice = new Notice();
 			notice.setNoticeId(rs.getInt("notice_id"));
@@ -50,7 +50,7 @@ public class NoticeDao {
 		return notice;
 	}
 	
-	// °øÁö¸®½ºÆ® Ãâ·Â
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½
 	public ArrayList<Notice> selectNoticeList() throws Exception{
 		ArrayList<Notice> list = new ArrayList<Notice>();
 		DBUtil dbUtil = new DBUtil();
@@ -60,7 +60,7 @@ public class NoticeDao {
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 			
-		// ¹Ýº¹¹®À» ÅëÇØ µ¥ÀÌÅÍ ¼ø¼­´ë·Î ÀÔ·Â
+		// ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
 		while(rs.next()) {
 			Notice notice = new Notice();
 			notice.setNoticeId(rs.getInt("notice_id"));

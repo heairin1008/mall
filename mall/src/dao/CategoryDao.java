@@ -24,13 +24,13 @@ public class CategoryDao {
 		conn.close();
 		return list;
 	}
-	// ÃßÃµ Ä«Å×°í¸® pic ¸ñ·Ï
+	// ì¶”ì²œ ì¹´í…Œê³ ë¦¬ pic ëª©ë¡
 	public ArrayList<Category> selectCategoryCkList() throws Exception {
 		ArrayList<Category> list = new ArrayList<Category>();
 		DBUtil dbUtil = new DBUtil();
 		Connection conn = dbUtil.getConnection();		
 		
-		String sql = "select category_id, category_pic from category where category_ck = 'Y' limit 0, 4";
+		String sql = "select category_id, category_pic from category where category_ck = 'Y' limit 0, 5";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
@@ -45,8 +45,8 @@ public class CategoryDao {
 	}
 }
 /*
- * public °á°úÅ¸ÀÔ ÀÌ¸§(ÀÔ·ÂÅ¸ÀÔ1, ÀÔ·ÂÅ¸ÀÔ){
- * 			±¸ÇöÄÚµå
- * 			return °á°ú°ª;
+ *public ê²°ê³¼íƒ€ì… ì´ë¦„(ì…ë ¥íƒ€ì…1, ì…ë ¥íƒ€ì…){
+ * 			êµ¬í˜„ì½”ë“œ
+ * 			return ê²°ê³¼ê°’;
  * 		}
  */

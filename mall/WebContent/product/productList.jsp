@@ -33,7 +33,7 @@
 	ArrayList<Product> productList = productDao.selectProductListByCategoryId(categoryId);
 	
 	CategoryDao categoryDao = new CategoryDao();
-	// 전체 카테고리 목록
+	// 전체 카테고리 목록	
 	ArrayList<Category> categoryList1 = categoryDao.selectCategoryList();
 %>
 <div class="container">
@@ -127,7 +127,7 @@
 			%>
 					<td>
 						<div class="card" style="width:300px">
-	  						<img class="card-img-top" src="/mall-admin/image/<%=p.getProductPic()%>" alt="Card image">
+	  						<img class="card-img-top" src="/mall-admin/image/<%=p.getProductPic()%>" alt="Card image" width=300px; height=250px;>
 	  						<div class="card-body">
 								<h5 class="card-title font-weight-bold">
 									<a class="text-dark" href="<%=request.getContextPath()%>/product/productOne.jsp?productId=<%=p.getProductId()%>"><%=p.getProductName()%></a>

@@ -113,7 +113,7 @@
 			<tr>
 				<td>수량</td>
 				<td>
-					<select name="ordersAmount">
+					<select class="custom-select" style="width:10%;" name="ordersAmount">
 					<%
 						for(int i=1; i<11; i++){
 					%>
@@ -126,7 +126,7 @@
 			</tr>
 			<tr>
 				<td>배송주소</td>
-				<td><input type="text" name="ordersAddr" id="ordersAddr"></td>
+				<td><input type="text" name="ordersAddr" id="ordersAddr" class="form-control"></td>
 			</tr>
 			<tr>
 				<td colspan="2"><button class="btn btn-secondary" type="button" id="ordersBtn">주문</button></td>
