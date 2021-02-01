@@ -60,9 +60,7 @@
 			<a class="text-dark" href="<%=request.getContextPath()%>/orders/myOrdersList.jsp"><i class='fas fa-user' style='font-size: 36px'></i></a>
 		<%
 			}
-		%>
-			
-			<i class='fas fa-shopping-cart' style='font-size: 36px'></i>	
+		%>	
 		</div>
 	</div>
 	
